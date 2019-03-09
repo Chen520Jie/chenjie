@@ -1,0 +1,12 @@
+game: math.o main.o serv.o clie.o
+   gcc 每 o prog math.o main.o serv.o clie.o
+math.o:math.c
+   gcc 每 c main.c
+main.o: main.c math.h comm.h
+   gcc 每 c main.c
+serv.o: serv.c comm.h
+   gcc 每 c serv.c
+clie.o: clie.c comm.h
+   gcc 每 c clie.o clie.c 
+clean:
+rm ?.o game
